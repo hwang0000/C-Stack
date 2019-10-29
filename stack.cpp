@@ -1,8 +1,8 @@
 #include "stack.h"
 
-//Á´Õ»ÊµÏÖ
+//é“¾æ ˆå®žçŽ°
 
-//³õÊ¼»¯Á´Õ»
+//åˆå§‹åŒ–é“¾æ ˆ
 pLinkStack InitStack() 
 {
 	pLinkStack s;
@@ -12,16 +12,16 @@ pLinkStack InitStack()
 	return s;
 }
 
-//ÅÐ¶ÏÕ»¿Õ
+//åˆ¤æ–­æ ˆç©º
 int StackEmpty(pLinkStack s) 
 {
-	if (NULL == s->next) //Õ»¿Õ
+	if (NULL == s->next) //æ ˆç©º
 		return 0;
-	else //Õ»·Ç¿Õ
+	else //æ ˆéžç©º
 		return 1;
 }
 
-//ÈëÕ»
+//å…¥æ ˆ
 int PushStack(pLinkStack s, LinkData x) 
 {
 	pLinkStack t;
@@ -35,16 +35,16 @@ int PushStack(pLinkStack s, LinkData x)
 		s->linkSize++;
 		return 1;
 	}
-	printf("¿Õ¼ä²»×ã£¬ÈëÕ»Ê§°Ü£¡\n");
+	printf("ç©ºé—´ä¸è¶³ï¼Œå…¥æ ˆå¤±è´¥ï¼\n");
 	return 0;
 }
 
-//³öÕ»
+//å‡ºæ ˆ
 LinkData PopStack(pLinkStack s) 
 {
 	LinkData x;
 	if (NULL == s->next) {
-		printf("Õ»Îª¿Õ£¬³öÕ»Ê§°Ü£¡\n");
+		printf("æ ˆä¸ºç©ºï¼Œå‡ºæ ˆå¤±è´¥ï¼\n");
 		x.id = 0;
 		strcpy(x.name, "NULL");
 		return x;
@@ -58,12 +58,12 @@ LinkData PopStack(pLinkStack s)
 	return x;
 }
 
-//¶ÁÈ¡Õ»¶¥ÔªËØ
+//è¯»å–æ ˆé¡¶å…ƒç´ 
 LinkData GetTopStack(pLinkStack s)
 {
 	LinkData x;
 	if (NULL == s->next) {
-		printf("Õ»Îª¿Õ£¡\n");
+		printf("æ ˆä¸ºç©ºï¼\n");
 		x.id = 0;
 		strcpy(x.name, "NULL");
 		return x;
@@ -72,11 +72,11 @@ LinkData GetTopStack(pLinkStack s)
 	return x;
 }
 
-//±éÀúÁ´Õ»
+//éåŽ†é“¾æ ˆ
 void printStack(pLinkStack s) 
 {
 	if (NULL == s->next) {
-		printf("Õ»¿Õ\n");
+		printf("æ ˆç©º\n");
 		return;
 	}
 	while (s->next)
@@ -85,11 +85,11 @@ void printStack(pLinkStack s)
 		s = s->next;
 	}
 	printf("|--------------------\n");
-	printf("|Õ»µ×\n");
+	printf("|æ ˆåº•\n");
 	return;
 }
 
-//Çå¿ÕÕ»
+//æ¸…ç©ºæ ˆ
 void clearStack(pLinkStack s) 
 {
 	pLinkStack tmp;
@@ -100,24 +100,24 @@ void clearStack(pLinkStack s)
 		free(tmp);
 		tmp = NULL;
 	}
-	printf("Õ»¿Õ\n");
+	printf("æ ˆç©º\n");
 	s->linkSize = 0;
 	return;
 }
 
-//ÊÍ·ÅÕ»
-void freeStack(pLinkStack s) 
+//é‡Šæ”¾æ ˆ
+void freeStack(pLinkStack* s) 
 {
 	pLinkStack tmp;
-	while (s->next)
+	while ((*s)->next)
 	{
-		tmp = s->next;
-		s->next = tmp->next;
+		tmp = (*s)->next;
+		(*s)->next = tmp->next;
 		free(tmp);
 		tmp = NULL;
 	}
-	free(s);
-	s = NULL;
-	printf("ÊÍ·ÅÕ»\n");
+	free(*s);
+	*s = NULL;
+	printf("é‡Šæ”¾æ ˆ\n");
 	return;
 }
