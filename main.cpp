@@ -1,7 +1,7 @@
 #include "stack.h"
 #include "SqStack.h"
 
-//Á´Õ»Á·Ï°
+//é“¾æ ˆç»ƒä¹ 
 void StackPro() {
 	int i, j;
 	pLinkStack s;
@@ -14,21 +14,21 @@ lable_1:
 	printf("\33[33m");
 	printf("******************************\n");
 	printf("***                        ***\n");
-	printf("***        Á´Õ»Á·Ï°        ***\n");
+	printf("***        é“¾æ ˆç»ƒä¹         ***\n");
 	printf("***                        ***\n");
 	printf("******************************\n");
-	printf("***     \33[32m1.³õÊ¼»¯Ò»¸öÕ»\33[33m     ***\n");
-	printf("***     \33[32m2.ÈëÕ»\33[33m             ***\n");
-	printf("***     \33[32m3.³öÕ»\33[33m             ***\n");
-	printf("***     \33[32m4.ÏÔÊ¾Õ»¶¥ÔªËØ\33[33m     ***\n");
-	printf("***     \33[32m5.Õ»³¤\33[33m             ***\n");
-	printf("***     \33[32m6.Õ»ÊÇ·ñÎª¿Õ\33[33m       ***\n");
-	printf("***     \33[32m7.Çå¿ÕÕ»\33[33m           ***\n");
-	printf("***     \33[32m8.ÊÍ·ÅÕ»\33[33m           ***\n");
-	printf("***     \33[32m9.·µ»ØÖ÷²Ëµ¥\33[33m       ***\n");
+	printf("***     \33[32m1.åˆå§‹åŒ–ä¸€ä¸ªæ ˆ\33[33m     ***\n");
+	printf("***     \33[32m2.å…¥æ ˆ\33[33m             ***\n");
+	printf("***     \33[32m3.å‡ºæ ˆ\33[33m             ***\n");
+	printf("***     \33[32m4.æ˜¾ç¤ºæ ˆé¡¶å…ƒç´ \33[33m     ***\n");
+	printf("***     \33[32m5.æ ˆé•¿\33[33m             ***\n");
+	printf("***     \33[32m6.æ ˆæ˜¯å¦ä¸ºç©º\33[33m       ***\n");
+	printf("***     \33[32m7.æ¸…ç©ºæ ˆ\33[33m           ***\n");
+	printf("***     \33[32m8.é‡Šæ”¾æ ˆ\33[33m           ***\n");
+	printf("***     \33[32m9.è¿”å›ä¸»èœå•\33[33m       ***\n");
 	printf("******************************\n");
 	printf("\33[0m");
-	printf("Ñ¡Ôñ¹¦ÄÜ£º");
+	printf("é€‰æ‹©åŠŸèƒ½ï¼š");
 
 	j = fscanf(stdin, "%d", &i);
 	switch (i)
@@ -38,7 +38,7 @@ lable_1:
 		system("pause");
 		goto lable_1;
 	case 2:
-		printf("ÊäÈëIDºÍName:\n");
+		printf("è¾“å…¥IDå’ŒName:\n");
 		i = scanf("%d%s", &data1.id, data1.name);
 		PushStack(s, data1);
 		system("pause");
@@ -64,17 +64,17 @@ lable_1:
 		system("pause");
 		goto lable_1;
 	case 5:
-		printf("Õ»ÄÚÔªËØ¸öÊıÎª%d\n", s->linkSize);
+		printf("æ ˆå†…å…ƒç´ ä¸ªæ•°ä¸º%d\n", s->linkSize);
 		system("pause");
 		goto lable_1;
 	case 6:
 		if (StackEmpty(s))
 		{
-			printf("Õ»·Ç¿Õ\n");
+			printf("æ ˆéç©º\n");
 		}
 		else
 		{
-			printf("Õ»¿Õ\n");
+			printf("æ ˆç©º\n");
 		}
 		system("pause");
 		goto lable_1;
@@ -83,13 +83,13 @@ lable_1:
 		system("pause");
 		goto lable_1;
 	case 8:
-		freeStack(s);
+		freeStack(&s);
 		system("pause");
 		goto lable_1;
 	case 9:
 		break;
 	default:
-		printf("·Ç·¨ÊäÈë,ÊÇ·ñ·µ»Ø²Ëµ¥(1.·µ»Ø,ÆäËû.ÍË³ö):");
+		printf("éæ³•è¾“å…¥,æ˜¯å¦è¿”å›èœå•(1.è¿”å›,å…¶ä»–.é€€å‡º):");
 		i = getchar();
 		i = fscanf(stdin, "%d", &j);
 		if (j == 1)
@@ -101,7 +101,7 @@ lable_1:
 	return;
 }
 
-//Ë³ĞòÕ»Á·Ï°
+//é¡ºåºæ ˆç»ƒä¹ 
 void SqStackPro() {
 	int i, j;
 	SqStack* s1;
@@ -113,19 +113,19 @@ lable_1:
 	printf("\33[33m");
 	printf("******************************\n");
 	printf("***                        ***\n");
-	printf("***       Ë³ĞòÕ»Á·Ï°       ***\n");
+	printf("***       é¡ºåºæ ˆç»ƒä¹        ***\n");
 	printf("***                        ***\n");
 	printf("******************************\n");
-	printf("***     \33[32m1.Çå¿ÕÕ»\33[33m           ***\n");
-	printf("***     \33[32m2.ÈëÕ»\33[33m             ***\n");
-	printf("***     \33[32m3.³öÕ»\33[33m             ***\n");
-	printf("***     \33[32m4.ÏÔÊ¾Õ»¶¥ÔªËØ\33[33m     ***\n");
-	printf("***     \33[32m5.Õ»³¤\33[33m             ***\n");
-	printf("***     \33[32m6.Õ»ÊÇ·ñÎª¿Õ\33[33m       ***\n");
-	printf("***     \33[32m7.·µ»ØÖ÷²Ëµ¥\33[33m       ***\n");
+	printf("***     \33[32m1.æ¸…ç©ºæ ˆ\33[33m           ***\n");
+	printf("***     \33[32m2.å…¥æ ˆ\33[33m             ***\n");
+	printf("***     \33[32m3.å‡ºæ ˆ\33[33m             ***\n");
+	printf("***     \33[32m4.æ˜¾ç¤ºæ ˆé¡¶å…ƒç´ \33[33m     ***\n");
+	printf("***     \33[32m5.æ ˆé•¿\33[33m             ***\n");
+	printf("***     \33[32m6.æ ˆæ˜¯å¦ä¸ºç©º\33[33m       ***\n");
+	printf("***     \33[32m7.è¿”å›ä¸»èœå•\33[33m       ***\n");
 	printf("******************************\n");
 	printf("\33[0m");
-	printf("Ñ¡Ôñ¹¦ÄÜ£º");
+	printf("é€‰æ‹©åŠŸèƒ½ï¼š");
 
 	j = fscanf(stdin, "%d", &i);
 	switch (i)
@@ -135,7 +135,7 @@ lable_1:
 		system("pause");
 		goto lable_1;
 	case 2:
-		printf("ÊäÈëIDºÍName:\n");
+		printf("è¾“å…¥IDå’ŒName:\n");
 		i = scanf("%d%s", &data1.id, data1.name);
 		PushSqStack(s1, data1);
 		system("pause");
@@ -161,24 +161,24 @@ lable_1:
 		system("pause");
 		goto lable_1;
 	case 5:
-		printf("Õ»×î´ó³¤¶ÈÎª%d\nÕ»ÄÚÔªËØ¸öÊıÎª%d\n", MaxSize, s1->top + 1);
+		printf("æ ˆæœ€å¤§é•¿åº¦ä¸º%d\næ ˆå†…å…ƒç´ ä¸ªæ•°ä¸º%d\n", MaxSize, s1->top + 1);
 		system("pause");
 		goto lable_1;
 	case 6:
 		if (SqStackEmpty(s1))
 		{
-			printf("Õ»·Ç¿Õ\n");
+			printf("æ ˆéç©º\n");
 		}
 		else
 		{
-			printf("Õ»¿Õ\n");
+			printf("æ ˆç©º\n");
 		}
 		system("pause");
 		goto lable_1;
 	case 7:
 		break;
 	default:
-		printf("·Ç·¨ÊäÈë,ÊÇ·ñ·µ»Ø²Ëµ¥(1.·µ»Ø,ÆäËû.ÍË³ö):");
+		printf("éæ³•è¾“å…¥,æ˜¯å¦è¿”å›èœå•(1.è¿”å›,å…¶ä»–.é€€å‡º):");
 		i = getchar();
 		i = fscanf(stdin, "%d", &j);
 		if (j == 1)
@@ -197,15 +197,15 @@ lable_1:
 	printf("\33[33m");
 	printf("****************************\n");
 	printf("***                      ***\n");
-	printf("***        Õ»Á·Ï°        ***\n");
+	printf("***        æ ˆç»ƒä¹         ***\n");
 	printf("***                      ***\n");
 	printf("****************************\n");
-	printf("***     \33[32m1.Ë³ĞòÕ»Á·Ï°\33[33m     ***\n");
-	printf("***     \33[32m2.Á´Õ»Á·Ï°\33[33m       ***\n");
-	printf("***     \33[32m3.ÍË³ö\33[33m           ***\n");
+	printf("***     \33[32m1.é¡ºåºæ ˆç»ƒä¹ \33[33m     ***\n");
+	printf("***     \33[32m2.é“¾æ ˆç»ƒä¹ \33[33m       ***\n");
+	printf("***     \33[32m3.é€€å‡º\33[33m           ***\n");
 	printf("****************************\n");
 	printf("\33[0m");
-	printf("Ñ¡Ôñ¹¦ÄÜ£º");
+	printf("é€‰æ‹©åŠŸèƒ½ï¼š");
 	
 	j = fscanf(stdin, "%d", &i);
 	switch (i)
@@ -219,7 +219,7 @@ lable_1:
 	case 3:
 		break;
 	default:
-		printf("·Ç·¨ÊäÈë,ÊÇ·ñ·µ»ØÖ÷²Ëµ¥(1.·µ»Ø,ÆäËû.ÍË³ö):");
+		printf("éæ³•è¾“å…¥,æ˜¯å¦è¿”å›ä¸»èœå•(1.è¿”å›,å…¶ä»–.é€€å‡º):");
 		i = getchar();
 		i = fscanf(stdin, "%d", &j);
 		if (j == 1)
@@ -228,11 +228,11 @@ lable_1:
 		}
 		break;
 	}
-	printf("\33[32m³ÌĞò2ÃëºóÍË³ö£¡");
+	printf("\33[32mç¨‹åº2ç§’åé€€å‡ºï¼");
 	Sleep(1000);
-	printf("\r\33[33m³ÌĞò1ÃëºóÍË³ö£¡");
+	printf("\r\33[33mç¨‹åº1ç§’åé€€å‡ºï¼");
 	Sleep(1000);
-	printf("\r\33[31m³ÌĞòÒÑÍË³ö£¡    \33[0m");
+	printf("\r\33[31mç¨‹åºå·²é€€å‡ºï¼    \33[0m");
 	Sleep(1000);
 	exit(0);
 }
