@@ -5,7 +5,7 @@
 #include <Windows.h>
 
 
-//Á´Õ»
+//é“¾æ ˆ
 
 typedef struct LinkData 
 {
@@ -20,21 +20,21 @@ typedef struct Linknode
 	int linkSize;
 }LinkStack, * pLinkStack;
 
-//Á´Õ»ÉùÃ÷
+//é“¾æ ˆå£°æ˜
 
-//³õÊ¼»¯
+//åˆå§‹åŒ–
 pLinkStack InitStack();
-//ÅĞ¶ÏÕ»¿Õ
+//åˆ¤æ–­æ ˆç©º
 int StackEmpty(pLinkStack);
-//ÈëÕ»
+//å…¥æ ˆ
 int PushStack(pLinkStack, LinkData);
-//³öÕ»
+//å‡ºæ ˆ
 LinkData PopStack(pLinkStack);
-//¶ÁÈ¡Õ»¶¥ÔªËØ
+//è¯»å–æ ˆé¡¶å…ƒç´ 
 LinkData GetTopStack(pLinkStack);
-//±éÀúÁ´Õ»
+//éå†é“¾æ ˆ
 void printStack(pLinkStack);
-//Çå¿ÕÕ»
+//æ¸…ç©ºæ ˆ
 void clearStack(pLinkStack);
-//ÊÍ·ÅÕ»
-void freeStack(pLinkStack);
+//é‡Šæ”¾æ ˆ
+void freeStack(pLinkStack*);
